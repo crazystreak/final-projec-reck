@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:floralwhite">
+        <form action="{{ url_for('predict')}}" method="post">
+	<h1 style="color:lightseagreen">Second Hand Car Price Prediction</h1>
+<h3>Kilometers Driven</h3><input id="third" name="Kms_Driven" required="required">           
+ <h3>Model Year</h3>
+            <input id="first" name="Year" type="number ">
+<h3>Prior number of owners ?</h3><br><input id="fourth" name="Owner" required="required">
+           
+            <h3>Showroom's Price </h3><br><input id="second" name="Present_Price" required="required">
+            
+		
+             <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+            <h3>Please Select Dealer</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Please Select Transmission type</h3><br>
+		
+                	<select name="Transmission_Mannual" id="research" required="required">
+			<option value="Mannual">Manual</option>
+                	<option value="Automatic">Automatic</option>
+            		</select>
+		
+            <br><br><button id="sub" type="submit ">Calculate Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h1 style="color:gold">{{ prediction_text }}<span> Lakhs</span><h1>
+    </div>
+
+
+
+
+    <style>
+        body {
+	    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9756ae66898773.5b2704164fec0.jpg");
+    	    background-size: cover;
+            text-align: center;
+            padding: 0px;
+		
+        }
+
+        #research {
+            font-size: 16px;
+            width: 150pxpx;
+            height: 23px;
+            top: 23px;
+        }
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+                width: 120px;
+    		height: 43px;
+    		text-align: center;
+    		border-radius: 5px;
+    		font-size: 20px;
+    		font-family: serif;
+    		font-weight: bold;
+    		background-color: darkgray;
+        }
+        
+        #fuel:hover {
+            background-color: white;
+        }
+        
+        #research {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius:5px;
+            font-size: 18px;
+	    background-color:grey;
+	    font-weight:bold;
+        }
+        
+        #research:hover {
+            background-color: white;
+        }
+        
+        #resea {
+         	width: 110px;
+    		height: 43px;
+    		text-align: center;
+    		border-radius: 5px;
+    		font-size: 18px;
+    		background-color: gray;
+		font-family:serif;
+		font-weight:bold;
+        }
+        
+        #resea:hover {
+            background-color: white;
+        }
+        
+  #sub {
+  position: relative;
+  background-color:darkred;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+#sub:hover{
+	background-color:red;
+}
+#sub:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+#sub:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+        
+        #first {
+            border-radius: 5px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 5px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 5px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+	margin-top:0px;
+        border-radius: 5px;
+    	height: 25px;
+    	font-size: 20px;
+    	text-align: center;
+        }
+
+	</style>
+	<script>
+</body>
+
+</html>
